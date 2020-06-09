@@ -106,7 +106,7 @@ GET '/categories'
     - Returns: An object with a single key, categories, that contains a object of id: category_string key:value pairs. 
 2) Sample request : curl http://127.0.0.1:5000/categories
 3)Detailed response:
-``
+```
 
 {'1' : "Science",
 '2' : "Art",
@@ -114,7 +114,7 @@ GET '/categories'
 '4' : "History",
 '5' : "Entertainment",
 '6' : "Sports"}
-``
+```
 
 GET '/questions?page=<page_number>' 
 
@@ -124,7 +124,7 @@ GET '/questions?page=<page_number>'
     -Returns a list of questions objects, success value, and total number of questions categories,current category 
  2)Smaple request : curl http://127.0.0.1:5000/questions?page=1
  3)Detailed response:
- ``
+ ```
 
 {
   "categories": {
@@ -211,8 +211,7 @@ GET '/questions?page=<page_number>'
   "success": true,
   "total_questions": 19
 }
-_``
-
+```
 DELETE /questions/<question_id> 
 
  1)General:
@@ -221,13 +220,13 @@ DELETE /questions/<question_id>
    -Returns the id of the deleted book, success value.
  2)sample Request curl -X DELETE http://127.0.0.1:5000/questions/16
  3)Detailed response:
-``
+```
 
 {
   "deleted": "16", 
   "success": true
 }
-``
+```
 POST /questions 
 
  1) General:
@@ -237,7 +236,7 @@ POST /questions
 2)sample Request:
 curl -i -H "Content-Type: application/json" -X POST -d "{\"question\":\"what is the capital city of saudi arabia? \", \"answer\":\"Riyadh\", \"category\":\"3\", \"difficulty\":\"3\"}" 127.0.0.1:5000/questions
 3)Detailed response:
-``
+```
 {
   "questions": [
     {
@@ -252,7 +251,7 @@ curl -i -H "Content-Type: application/json" -X POST -d "{\"question\":\"what is 
   "success": true,
   "total_questions": 20
 }
-``
+```
 POST /questions/search 
 
   1)General:
@@ -261,7 +260,7 @@ POST /questions/search
       -Returns dictionary  of quetions success value, total questions for whom the search term .
   2)sample Request: curl -i -H "Content-Type: application/json" -X POST -d "{\"searchTerm\":\"Organ\"}" 127.0.0.1:5000/questions/search
   3)Detailed response:
-  ``
+  ```
 {
   "questions": [
     {
@@ -274,7 +273,7 @@ POST /questions/search
   ],
   "success": true,
   "total_questions": 1
-``
+```
 
 
 GET /categories/<int:category_id>/questions 
@@ -285,7 +284,7 @@ GET /categories/<int:category_id>/questions
     -Returns  current_category ,dictionary of quetions ,success value, total questions for for the specified category.
  2)sample Request:curl http://127.0.0.1:5000/categories/3/questions
  3)Detailed response:
- ``
+ ```
 {
   "current_category": "Geography",
   "questions": [
@@ -315,7 +314,7 @@ GET /categories/<int:category_id>/questions
   "total_questions": 3
 }
 
-``
+```
 
 POST /quizzes 
 
@@ -328,7 +327,7 @@ POST /quizzes
 curl -i -H "Content-Type: application/json" -X POST -d "{\"previous_questions\":[1,3],\"quiz_category\":{\"id\":\"3\",\"type\":\"Geography\"}}" 
 
 3)Detailed response:
-``
+```
 {
   "question": {
     "answer": "Lake Victoria",
@@ -339,7 +338,7 @@ curl -i -H "Content-Type: application/json" -X POST -d "{\"previous_questions\":
   },
   "success": true
 }
-``
+```
 
 
 
